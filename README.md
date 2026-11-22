@@ -20,6 +20,7 @@
 ## 빌드
 
 ```
+cd Lab 2      # Lab 2 폴더로 이동
 make          # 전체 컴파일
 make clean    # 실행 파일 삭제
 ```
