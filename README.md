@@ -16,6 +16,7 @@
 | 5.9 | `(5.9)mqchat.c` | POSIX 메시지 큐를 이용한 텍스트 채팅 |
 | 5.10 | `(5.10)shmcopy.c` | POSIX 공유 메모리와 mmap 을 이용한 파일 복사 |
 | 5.11 | `(5.11)notify_server.c`, `(5.11)notify_client.c` | D-Bus(sd-bus) 알림 서버-클라이언트 |
+| 5.12 | 팀과제 쉘 프로그램 | https://github.com/SexyJaeseok/mini-shell-team2_1 |
 
 ## 빌드
 
@@ -49,6 +50,28 @@ make testtree && ./myls_R test_tree        # ls -R test_tree 와 비교
 ./notify_client listen 30
 ./notify_client send "제목" "내용"
 ./notify_client count
+```
+
+## 팀 과제
+
+5.12 팀 과제: 리눅스 기본 명령어와 파이프를 지원하는 미니 셸 (C, Ubuntu 24.04, GCC)
+
+- 저장소: https://github.com/SexyJaeseok/mini-shell-team2_1
+- 팀원: 임채민, 박재석, 김시현
+
+| 담당 | 구현한 명령 |
+|---|---|
+| 임채민 | `cat`, `grep`, `pwd` |
+| 박재석 | `ls`, `mkdir`, `rmdir`, `rm` |
+| 김시현 | `cd`, `cp`, `mv`, `ln` |
+| 공동 | 명령 분석, `exit`, `&`(백그라운드), 시그널(Ctrl-C, Ctrl-Z), 재지향(`<`, `>`), 파이프(`\|`), 외부 프로그램 실행 |
+
+저장소의 `mini-shell-team2_1` 폴더에서 `make` 를 실행하면 `myshell` 실행 파일이 만들어진다.
+
+```
+cat input.txt | grep hello > result.txt     # 파이프와 재지향
+sleep 15 &                                  # 백그라운드 실행
+exit                                        # 종료
 ```
 
 ## 환경
